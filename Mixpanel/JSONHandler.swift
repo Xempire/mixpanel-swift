@@ -50,11 +50,14 @@ class JSONHandler {
 
     private class func makeObjectSerializable(_ obj: MPObjectToParse) -> MPObjectToParse {
         switch obj {
-        case let obj as Double where obj.isFinite:
+        case is String, is Int, is UInt, is UInt64, is Bool:
             return obj
-            
-        case is String, is Int, is UInt, is UInt64, is Float, is Bool:
-            return obj
+
+        case let obj as Double:
+            return (obj.isNaN || obj.isInfinite) ? 0.0 : obj
+
+        case let obj as Float:
+            return (obj.isNaN || obj.isInfinite) ? 0.0 : obj
 
         case let obj as Array<Any>:
             return obj.map() { makeObjectSerializable($0) }
