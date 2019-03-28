@@ -761,10 +761,11 @@
 			};
 			buildConfigurationList = E11594771CFF1491007F8B4F /* Build configuration list for PBXProject "Mixpanel" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = E11594731CFF1491007F8B4F;
 			productRefGroup = E115947E1CFF1491007F8B4F /* Products */;
